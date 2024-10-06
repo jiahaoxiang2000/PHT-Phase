@@ -6,7 +6,7 @@ tic
 %% material information
 k=1e-19;
 gc=2.7; % KN/mm power relase rate
-%lambda=121.15; mu=80.7692; 
+%lambda=121.15; mu=80.7692;
 Emod = 210000;nu = 0.3;
 %Emod=mu*(2*mu+3*lambda)/(mu+lambda);nu=lambda/(2*(mu+lambda)); %The transformation relationship between Lamay's constant and Poisson's ratio of elastic modulus
 lambda=(nu*Emod)/((1+nu)*(1-2*nu)); mu=Emod/(2*(1+nu)); % GPa Elastomer modulus and shear modulus
@@ -42,9 +42,10 @@ for i=1:numPatches
     quadList{i} = 2:5;
 end
 
+% the format of patchBoundaries: patchA, edgeA, patchB, edgeB; the edge format: 1-down, 2-right, 3-up, 4-left.
 patchBoundaries = {1, 2, 2, 4; 2, 3, 3, 1; 3, 4, 4, 2};
 
-tic %????????????\
+tic % start timing
 keep_refining = 1;
 %keep_E_refining = 1;
 num_steps = 0;

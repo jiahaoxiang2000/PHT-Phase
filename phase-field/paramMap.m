@@ -1,7 +1,7 @@
 function [coord, dxdxi] = paramMap( GIFTmesh, u_hat, v_hat, xmin, ymin, xmax, ymax)
 %maps (u_hat, v_hat) from the reference coordinate, to physical space using the geometry
 %information stored in GIFTmesh
-%从参考坐标映射(u_hat, v_hat)到物理空间使用存储在GIFTmesh中的几何信息
+%From the reference coordinate map (u hat, v hat) to the physical space uses the geometric information stored in GIFTmesh
 %map (u_hat, v_hat) on [-1, 1]x[-1,1] to (xi, eta) on [xmin, xmax]x[ymin,
 %ymax]
 

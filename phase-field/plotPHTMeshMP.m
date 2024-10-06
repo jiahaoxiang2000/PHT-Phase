@@ -1,7 +1,6 @@
 function  plotPHTMeshMP( PHTelem,PHTmesh )
 %plots the elements stored in PHTelem structure array
-%supports multipatches绘制存储在PHTelem结构阵列中的元素，支持多补丁
-
+%supports multipatches Draws elements stored in an array of PHTelem structures with support for multiple patches
 %we define colors for up to 6 patches
 %colorArray = {'blue', 'red', 'green', 'cyan', 'magenta', 'black','blue','red','green'};
 colorArray = {'blue', 'blue', 'blue', 'blue', 'blue','blue'};
@@ -17,13 +16,13 @@ for patchIndex = 1:numPatches
         if isempty(PHTelem{patchIndex}(i).children)
             colorIndex = rem((patchIndex-1),6)+1;
             %store the corners of the element in parameter space for easy
-            %access将元素的角存储在参数空间中以方便访问
+            %access Stores the element's corners in the parameter space for easy access
             pxmin = PHTelem{patchIndex}(i).vertex(1);
             pymin = PHTelem{patchIndex}(i).vertex(2);
             pxmax = PHTelem{patchIndex}(i).vertex(3);
             pymax = PHTelem{patchIndex}(i).vertex(4);
             
-            %determine the edges of the element in the physical space确定元素在物理空间中的边缘
+            %determine the edges of the element in the physical space Determine the edges of an element in physical space
             coord_south = zeros(numPts,2);
             coord_east = zeros(numPts,2);
             coord_north = zeros(numPts,2);
